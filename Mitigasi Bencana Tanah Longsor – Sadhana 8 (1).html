@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Mitigasi Bencana Tanah Longsor – Sadhana 8</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#eef5e2;--surface:#fff;--ink:#1f3a14;--muted:#4b6340;--green:#4b6b1f;--deep:#334d12;--accent:#f2b705;--line:#cfe0b4;--warn:#c0392b;--ok:#2e7d32;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#15200c;--surface:#1f2e13;--ink:#eaf3d9;--muted:#b4c79b;--green:#8fb84a;--deep:#0f1809;--line:#35501f}}
+:root[data-theme="dark"]{--bg:#15200c;--surface:#1f2e13;--ink:#eaf3d9;--muted:#b4c79b;--green:#8fb84a;--deep:#0f1809;--line:#35501f}
+*{box-sizing:border-box}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Fredoka",system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.55}
+.wrap{max-width:760px;margin:0 auto;padding:0 18px 48px}
+header{background:var(--green);color:#fff;padding:28px 18px 56px;border-radius:0 0 40px 40px}
+header .in{max-width:760px;margin:0 auto}
+.badge{display:inline-block;background:var(--accent);color:#2b2200;font-weight:600;padding:4px 14px;border-radius:99px;font-size:.95rem}
+h1{font-size:clamp(2rem,8vw,3.2rem);line-height:1.05;margin:14px 0 10px;font-weight:700}
+header p{margin:0;max-width:56ch;opacity:.95}
+.card{background:var(--surface);border:2px solid var(--line);border-radius:22px;padding:18px;margin-top:-34px;position:relative}
+.def h2{margin:0 0 6px;font-size:1.2rem;color:var(--green)}
+.def p{margin:0}
+.tabs{display:flex;gap:8px;margin:26px 0 14px;flex-wrap:wrap}
+.tab{flex:1;min-width:100px;border:2px solid var(--green);background:transparent;color:var(--green);font:inherit;font-weight:600;padding:10px 8px;border-radius:14px;cursor:pointer}
+.tab[aria-selected="true"]{background:var(--green);color:#fff}
+.tab:focus-visible,.btn:focus-visible,.opt:focus-visible,.item:focus-within{outline:3px solid var(--accent);outline-offset:2px}
+.prog{height:12px;background:var(--line);border-radius:99px;overflow:hidden}
+.prog i{display:block;height:100%;width:0;background:var(--green);transition:width .35s}
+.pt{font-size:.9rem;color:var(--muted);margin:6px 0 12px}
+.item{display:flex;gap:12px;align-items:flex-start;background:var(--surface);border:2px solid var(--line);border-radius:16px;padding:12px 14px;margin-bottom:10px;cursor:pointer}
+.item input{width:22px;height:22px;margin-top:2px;accent-color:var(--green);flex:none}
+.item b{display:block}
+.item span{color:var(--muted);font-size:.92rem}
+.item.done{border-color:var(--green);background:color-mix(in srgb,var(--green) 12%,var(--surface))}
+.item.done b{text-decoration:line-through;text-decoration-thickness:2px}
+h3{font-size:1.5rem;margin:34px 0 4px;color:var(--green)}
+.sub{margin:0 0 14px;color:var(--muted)}
+.q{background:var(--surface);border:2px solid var(--line);border-radius:22px;padding:18px}
+.q h4{margin:0 0 12px;font-size:1.1rem}
+.opt{display:block;width:100%;text-align:left;font:inherit;color:var(--ink);background:transparent;border:2px solid var(--line);border-radius:14px;padding:10px 14px;margin-bottom:8px;cursor:pointer}
+.opt.right{border-color:var(--ok);background:color-mix(in srgb,var(--ok) 18%,var(--surface))}
+.opt.wrong{border-color:var(--warn);background:color-mix(in srgb,var(--warn) 16%,var(--surface))}
+.fb{min-height:3em;margin:6px 0 10px;font-size:.95rem}
+.btn{font:inherit;font-weight:600;background:var(--green);color:#fff;border:0;border-radius:14px;padding:10px 18px;cursor:pointer}
+footer{text-align:center;margin-top:36px;color:var(--muted);font-size:.95rem}
+footer b{color:var(--green)}
+.top{display:flex;justify-content:flex-end}
+.top button{background:rgba(255,255,255,.18);color:#fff;border:0;border-radius:99px;padding:6px 14px;font:inherit;cursor:pointer}
+</style>
+</head>
+<body>
+<header><div class="in">
+ <div class="top"><button id="theme" type="button" aria-label="Ganti tema terang atau gelap">Tema</button></div>
+ <span class="badge">Kelompok Sadhana 8</span>
+ <h1>Mitigasi Bencana Tanah Longsor</h1>
+ <p>Kenali apa yang harus dilakukan sebelum, saat, dan setelah longsor. Centang langkahnya, lalu uji pemahamanmu.</p>
+</div></header>
+
+<main class="wrap">
+ <section class="card def">
+  <h2>Apa itu tanah longsor?</h2>
+  <p>Peristiwa pergerakan massa tanah, batu, atau campuran keduanya dari tempat yang lebih tinggi ke tempat yang lebih rendah. Biasanya terjadi di lereng atau pegunungan ketika tanah tidak lagi sanggup menahan beban di atasnya.</p>
+ </section>
+
+ <div class="tabs" role="tablist" aria-label="Tahap bencana">
+  <button class="tab" role="tab" aria-selected="true" data-k="sebelum" type="button">Sebelum</button>
+  <button class="tab" role="tab" aria-selected="false" data-k="saat" type="button">Saat</button>
+  <button class="tab" role="tab" aria-selected="false" data-k="setelah" type="button">Setelah</button>
+ </div>
+ <div class="prog" aria-hidden="true"><i id="bar"></i></div>
+ <div class="pt" id="pt"></div>
+ <div id="list"></div>
+
+ <h3>Uji pemahamanmu</h3>
+ <p class="sub">Jawab 5 pertanyaan singkat.</p>
+ <div class="q" id="quiz"></div>
+
+ <footer>Disusun oleh <b>Kelompok Sadhana 8</b><br>Sumber materi: infografis mitigasi bencana tanah longsor</footer>
+</main>
+
+<script>
+var D={
+sebelum:[
+["Hindari menebang pohon di sekitar lereng","Akar pohon membantu menahan tanah."],
+["Pindahkan barang berharga ke tempat aman","Dokumen, uang, dan ponsel dalam tas siaga."],
+["Hindari membangun rumah di lereng","Lereng curam rawan bergerak."],
+["Waspada ketika curah hujan tinggi","Hujan lebat berhari-hari memicu longsor."],
+["Penghijauan dengan tanaman berakar dalam","Tanam di lereng agar tanah lebih kuat."]],
+saat:[
+["Lindungi kepala dengan tangan","Kurangi risiko cedera dari batu dan puing."],
+["Segera evakuasi diri","Jauhi suara gemuruh dan arah datangnya longsor."],
+["Jangan panik dan tetap tenang","Berpikir jernih membantu mengambil keputusan."],
+["Cek kondisi sekitar tempat tinggal","Jika membahayakan, mengungsilah."]],
+setelah:[
+["Laporkan kepada pihak berwenang","BPBD, polisi, atau perangkat desa."],
+["Waspada potensi longsor susulan","Longsor bisa terjadi lagi di lokasi yang sama."],
+["Jangan menyalakan listrik sebelum benar-benar aman","Kabel basah dan rusak berbahaya."],
+["Jauhi kawasan yang terkena longsor","Tanah masih labil."],
+["Pantau terus informasi","Pastikan kondisi sudah aman sebelum kembali."]]};
+var cur="sebelum",S={};
+try{S=JSON.parse(localStorage.getItem("sdh8")||"{}")}catch(e){}
+function save(){try{localStorage.setItem("sdh8",JSON.stringify(S))}catch(e){}}
+function render(){
+ var L=D[cur],box=document.getElementById("list"),n=0;box.innerHTML="";
+ L.forEach(function(it,i){
+  var k=cur+i,on=!!S[k];if(on)n++;
+  var lb=document.createElement("label");lb.className="item"+(on?" done":"");
+  lb.innerHTML='<input type="checkbox"'+(on?" checked":"")+'><div><b></b><span></span></div>';
+  lb.querySelector("b").textContent=it[0];lb.querySelector("span").textContent=it[1];
+  lb.querySelector("input").onchange=function(e){S[k]=e.target.checked;save();render()};
+  box.appendChild(lb)});
+ document.getElementById("bar").style.width=(n/L.length*100)+"%";
+ document.getElementById("pt").textContent=n===L.length?"Semua langkah tahap ini sudah kamu pahami. Mantap!":n+" dari "+L.length+" langkah dipahami";
+}
+document.querySelectorAll(".tab").forEach(function(t){t.onclick=function(){
+ cur=t.dataset.k;document.querySelectorAll(".tab").forEach(function(x){x.setAttribute("aria-selected",x===t)});render()}});
+render();
+
+var Q=[
+["Apa yang sebaiknya dilakukan saat hujan deras berhari-hari di daerah lereng?",["Tetap tenang dan abaikan","Waspada dan pantau kondisi lereng","Menebang pohon agar lebih terang"],1,"Hujan tinggi adalah pemicu utama, jadi tetap waspada."],
+["Tanaman apa yang baik untuk penghijauan lereng?",["Tanaman berakar dalam","Rumput hias tanpa akar","Tanaman pot"],0,"Akar dalam mengikat tanah dan menahan longsor."],
+["Saat longsor terjadi, apa langkah pertama yang aman?",["Berlari ke arah datangnya longsor","Lindungi kepala dan menjauh dari arah longsor","Merekam video dari dekat"],1,"Lindungi kepala, lalu menjauh dari arah datangnya longsor."],
+["Mengapa jangan menyalakan listrik setelah longsor?",["Karena hemat energi","Instalasi bisa rusak dan berbahaya sebelum dicek aman","Karena listrik pasti padam selamanya"],1,"Kabel basah atau rusak bisa menyebabkan sengatan atau kebakaran."],
+["Setelah longsor, kamu sebaiknya…",["Segera kembali ke lokasi","Menjauhi kawasan longsor dan melapor ke pihak berwenang","Menggali sendiri tanpa alat"],1,"Longsor susulan masih mungkin terjadi."]];
+var qi=0,sc=0,lock=false,qb=document.getElementById("quiz");
+function showQ(){
+ lock=false;
+ if(qi>=Q.length){
+  qb.innerHTML='<h4></h4><p class="fb"></p><button class="btn" type="button">Ulangi kuis</button>';
+  qb.querySelector("h4").textContent="Skor kamu: "+sc+" dari "+Q.length;
+  qb.querySelector(".fb").textContent=sc===Q.length?"Sempurna! Kamu siap siaga menghadapi longsor.":sc>=3?"Bagus! Baca lagi langkah di atas untuk melengkapi.":"Yuk pelajari lagi tiga tahap di atas, lalu coba lagi.";
+  qb.querySelector("button").onclick=function(){qi=0;sc=0;showQ()};return}
+ var q=Q[qi];
+ qb.innerHTML='<div class="pt">Pertanyaan '+(qi+1)+' dari '+Q.length+'</div><h4></h4><div class="os"></div><p class="fb" aria-live="polite"></p>';
+ qb.querySelector("h4").textContent=q[0];
+ q[1].forEach(function(t,i){
+  var b=document.createElement("button");b.type="button";b.className="opt";b.textContent=t;
+  b.onclick=function(){
+   if(lock)return;lock=true;
+   var all=qb.querySelectorAll(".opt");all[q[2]].classList.add("right");
+   var f=qb.querySelector(".fb");
+   if(i===q[2]){sc++;f.textContent="Benar! "+q[3]}else{b.classList.add("wrong");f.textContent="Belum tepat. "+q[3]}
+   var nx=document.createElement("button");nx.type="button";nx.className="btn";nx.textContent=qi===Q.length-1?"Lihat skor":"Pertanyaan berikutnya";
+   nx.onclick=function(){qi++;showQ()};qb.appendChild(nx)};
+  qb.querySelector(".os").appendChild(b)})}
+showQ();
+
+document.getElementById("theme").onclick=function(){
+ var r=document.documentElement,d=r.getAttribute("data-theme")==="dark"||(!r.getAttribute("data-theme")&&matchMedia("(prefers-color-scheme:dark)").matches);
+ r.setAttribute("data-theme",d?"light":"dark")};
+</script>
+</body>
+</html>
